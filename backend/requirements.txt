@@ -1,0 +1,8 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+psutil>=5.9
+
+# Test / API-client dependencies.
+# httpx is required by starlette.testclient (tests/test_analysis.py).
+pytest>=8.0
+httpx>=0.27
