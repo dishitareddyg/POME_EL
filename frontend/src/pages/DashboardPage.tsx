@@ -12,9 +12,9 @@ import { MOCK_EXPERIMENTS } from "../data/mock";
 import { useHealth } from "../hooks/useHealth";
 import { fmtDate, fmtMs, fmtNum } from "../services/format";
 import { completedOnly, latestExperiment, managerMean, mean } from "../services/selectors";
-import type { ExperimentRecord } from "../types/experiment";
+import type { DashboardExperimentRecord } from "../types/experiment";
 
-const recentColumns: Column<ExperimentRecord>[] = [
+const recentColumns: Column<DashboardExperimentRecord>[] = [
   { key: "id", header: "ID", render: (r) => `#${r.id}`, sortValue: (r) => r.id },
   { key: "name", header: "Name", sortValue: (r) => r.name, className: "font-sans text-slate-900" },
   { key: "status", header: "Status", render: (r) => <StatusBadge status={r.status} /> },

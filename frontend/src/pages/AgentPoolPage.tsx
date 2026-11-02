@@ -54,13 +54,7 @@ import type { Agent, AgentOrigin, AgentStatus } from "../types/agent";
 
 // ─── Status helpers ──────────────────────────────────────────────────────────
 
-const STATUS_COLOR: Record<AgentStatus, string> = {
-  idle: "#94a3b8",
-  running: "#6366f1",
-  waiting: "#f59e0b",
-  failed: "#ef4444",
-  completed: "#22c55e",
-};
+
 
 const STATUS_BG: Record<AgentStatus, string> = {
   idle: "bg-slate-100 text-slate-600",
@@ -457,7 +451,7 @@ export default function AgentPoolPage() {
             <CartesianGrid stroke={GRID_STROKE} vertical={false} />
             <XAxis
               dataKey="name"
-              tick={{ ...AXIS_TICK, angle: -40, textAnchor: "end" }}
+              tick={{ ...AXIS_TICK, textAnchor: "end" }}
               tickLine={false}
               interval={0}
             />

@@ -103,14 +103,7 @@ const PRIORITY_COLOR: Record<TaskPriority, string> = {
   low:      "#94a3b8",
 };
 
-const STATUS_COLOR: Record<TaskStatus, string> = {
-  pending:   "#94a3b8",
-  ready:     "#6366f1",
-  blocked:   "#f59e0b",
-  running:   "#3b82f6",
-  completed: "#22c55e",
-  failed:    "#ef4444",
-};
+
 
 const STATUS_BG: Record<TaskStatus, string> = {
   pending:   "bg-slate-100 text-slate-600",
@@ -393,7 +386,7 @@ function WorkloadStats({ graph }: { graph: TaskGraph }) {
               <CartesianGrid stroke={GRID_STROKE} vertical={false} />
               <XAxis
                 dataKey="type"
-                tick={{ ...AXIS_TICK, angle: -35, textAnchor: "end" }}
+                tick={{ ...AXIS_TICK, textAnchor: "end" }}
                 tickLine={false}
                 interval={0}
               />

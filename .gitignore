@@ -6,3 +6,19 @@ __pycache__/
 .env
 backend/data/*.db
 .DS_Store
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+dist/
+
+# Environment variables
+.env
+.env.*
+
+# Local database
+*.db

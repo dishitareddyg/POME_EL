@@ -117,6 +117,21 @@ export interface ManagerResult {
   memory_mb: number;
 }
 
+/** Legacy dashboard fixture shape used by the overview/history/results pages.
+ * Kept separate from the backend ExperimentRecord API model above.
+ */
+export interface DashboardExperimentRecord {
+  id: number;
+  name: string;
+  status: ExperimentStatus;
+  num_workers: number;
+  num_tasks: number;
+  random_seed: number;
+  workload: string;
+  created_at: string;
+  results: Record<ManagerType, ManagerResult> | null;
+}
+
 export interface ExperimentRecord {
   id: string;
   name: string;

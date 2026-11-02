@@ -5,9 +5,9 @@ import SectionHeader from "../components/SectionHeader";
 import StatusBadge from "../components/StatusBadge";
 import { MOCK_EXPERIMENTS } from "../data/mock";
 import { fmtDate, fmtMs } from "../services/format";
-import type { ExperimentRecord, ExperimentStatus } from "../types/experiment";
+import type { DashboardExperimentRecord, ExperimentStatus } from "../types/experiment";
 
-const columns: Column<ExperimentRecord>[] = [
+const columns: Column<DashboardExperimentRecord>[] = [
   { key: "id", header: "ID", sortValue: (r) => r.id, render: (r) => `#${r.id}` },
   { key: "name", header: "Name", sortValue: (r) => r.name, className: "font-sans text-slate-900" },
   { key: "status", header: "Status", sortValue: (r) => r.status, render: (r) => <StatusBadge status={r.status} /> },

@@ -1,7 +1,7 @@
 // Illustrative mock data. Values are NOT experimental results.
 import type {
   AgentProfile,
-  ExperimentRecord,
+  DashboardExperimentRecord,
   ExperimentStatus,
   ManagerResult,
   WorkloadProfile,
@@ -26,7 +26,7 @@ const exp = (
   created_at: string,
   conv?: ManagerResult,
   pos?: ManagerResult,
-): ExperimentRecord => ({
+): DashboardExperimentRecord => ({
   id,
   name,
   status,
@@ -38,7 +38,7 @@ const exp = (
   results: conv && pos ? { conventional: conv, posdcorb: pos } : null,
 });
 
-export const MOCK_EXPERIMENTS: ExperimentRecord[] = [
+export const MOCK_EXPERIMENTS: DashboardExperimentRecord[] = [
   exp(13, "Burst load, 16 workers", "running", 16, 800, "Burst", "2026-10-28T09:10:00"),
   exp(12, "Replication of #11 (seed 7)", "pending", 12, 600, "Mixed", "2026-10-27T16:42:00"),
   exp(11, "Mixed workload baseline", "completed", 12, 600, "Mixed", "2026-10-26T11:05:00",

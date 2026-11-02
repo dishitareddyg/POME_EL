@@ -43,7 +43,7 @@ const STATUS_DOT: Record<string, string> = {
 interface NodePos { x: number; y: number; task: Task }
 
 function computeLayout(graph: TaskGraph): { nodes: NodePos[]; width: number; height: number } {
-  const { tasks, edges } = graph;
+  const { tasks } = graph;
   if (tasks.length === 0) return { nodes: [], width: 0, height: 0 };
 
   // --- Compute layer (depth) for each node ---
@@ -165,8 +165,8 @@ export default function DagViz({ graph, maxNodes = 120 }: Props) {
           >
             <span className="font-mono font-semibold" style={{ color: colors.text }}>{task.id}</span>
             <span className="text-slate-600">{task.task_type}</span>
-            <span className="rounded-full px-2 py-0.5 font-medium capitalize ring-1 ring-inset"
-              style={{ background: colors.fill, color: colors.text, ringColor: colors.stroke }}>
+            <span className="rounded-full border px-2 py-0.5 font-medium capitalize"
+              style={{ background: colors.fill, color: colors.text, borderColor: colors.stroke }}>
               {task.priority}
             </span>
             <span className="text-slate-500">~{task.estimated_workload_ms} ms</span>
